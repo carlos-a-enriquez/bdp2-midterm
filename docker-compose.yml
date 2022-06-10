@@ -1,0 +1,29 @@
+version: '3'
+services:
+   jupyter:
+      image: jupyter_redis
+      name:
+         - my_jupyter 
+      environment:
+         - JUPYTER_ENABLE_LAB=yes
+         - JUPYTER_TOKEN="bdp2_password"
+         - CHOWN_HOME=yes
+         - CHOWN_HOME_OPTS="-R"
+      networks:
+         - bdp2-net
+      user:
+         - root
+      volumes:
+         - ~/review/work:/home/jovyan
+      ports:
+         - 8080:80
+    redis:
+      image: redis redis-server
+      name:
+         - my_redis
+      volumes:
+         - ~/review/work:/data
+      ports:
+         - 8080:80
+      networks:
+         - bdp2-net
