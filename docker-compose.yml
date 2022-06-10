@@ -20,8 +20,6 @@ services:
       command: redis-server
       volumes:
          - ~/review/work:/data
-      ports:
-         - 8080:80
       networks:
          - bdp2-net
 networks:
