@@ -1,4 +1,4 @@
 #Jupyter with redis
 FROM jupyter/minimal-notebook
 RUN apt update
-RUN pip install redis
+RUN sudo pip install redis
