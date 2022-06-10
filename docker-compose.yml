@@ -6,9 +6,10 @@ services:
          - JUPYTER_ENABLE_LAB=yes
          - JUPYTER_TOKEN="bdp2_password"
          - CHOWN_HOME=yes
-         - CHOWN_HOME_OPTS="-R"
+         - CHOWN_HOME_OPTS=-R
       networks:
          - bdp2-net
+      user: root
       volumes:
          - ~/review/work:/home/jovyan
       ports:
