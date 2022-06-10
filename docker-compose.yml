@@ -9,8 +9,6 @@ services:
          - CHOWN_HOME_OPTS="-R"
       networks:
          - bdp2-net
-      user:
-           root
       volumes:
          - ~/review/work:/home/jovyan
       ports:
