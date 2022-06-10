@@ -4,7 +4,7 @@ services:
       image: jupyter_redis
       environment:
          - JUPYTER_ENABLE_LAB=yes
-         - JUPYTER_TOKEN="bdp2_password"
+         - JUPYTER_TOKEN= "bdp2_password"
          - CHOWN_HOME=yes
          - CHOWN_HOME_OPTS=-R
       networks:
@@ -23,3 +23,4 @@ services:
          - bdp2-net
 networks:
   bdp2-net:
+      driver: bridge
