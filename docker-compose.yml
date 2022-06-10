@@ -13,7 +13,7 @@ services:
       volumes:
          - ~/review/work:/home/jovyan
       ports:
-         - 8080:80
+        - 80:8080
    redis:
       image: redis
       command: redis-server
