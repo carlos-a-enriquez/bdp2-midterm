@@ -16,7 +16,8 @@ services:
       ports:
          - 8080:80
    redis:
-      image: redis redis-server
+      image: redis
+      command: redis-server
       volumes:
          - ~/review/work:/data
       ports:
