@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+   portainer_data:
 services:
    jupyter:
       image: jupyter_redis
@@ -22,6 +24,19 @@ services:
          - ~/review/work:/data
       networks:
          - backend
+   portainer:
+      image: portainer/portainer-ce
+      container_name: portainer
+      restart: always
+      volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+         - portainer_data:/data portainer/portainer-ce
+      networks:
+         - frontend
+      ports:
+         - 8000:8000
+         - 443:9443
+
 networks:
   backend:
       driver: bridge
